@@ -1,0 +1,36 @@
+<project name="Basic Stats" default="compile" basedir=".">
+
+<!-- Clean up -->
+    <target name="clean" description="Clean">
+        <delete dir="bin"/>
+    </target>
+
+<!-- Initialize build -->
+    <target name="init">
+        <mkdir dir="bin"/>
+    </target>
+
+<!-- Compile the project -->
+    <target name="compile" depends="init" description="Compile all sources">
+        <javac includeantruntime="true" 
+               srcdir="src"
+              destdir="bin"
+                debug="yes">
+        </javac>
+    </target>
+
+<!-- Generate the documentation based on the javadoc comments -->
+    <target name="document" depends="init" description="Generate
+    documentation for all sources">
+        <javadoc defaultexcludes="yes"
+		 destdir="jdoc"
+		 author="true"
+		 version="true"
+		 access="private"
+		 use="true"
+		 windowtitle="Simple stats documentation">
+	    <fileset dir="src"/>
+	</javadoc>
+    </target>
+    
+</project>
