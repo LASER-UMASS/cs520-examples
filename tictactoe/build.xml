@@ -1,0 +1,38 @@
+<project name="TicTacToe" default="compile" basedir=".">
+
+<!-- Clean up -->
+    <target name="clean" description="Clean">
+        <delete dir="bin"/>
+        <delete dir="jdoc"/>
+    </target>
+
+<!-- Initialize build -->
+    <target name="init">
+        <mkdir dir="bin"/>
+	<mkdir dir="jdoc"/>
+    </target>
+
+<!-- Generate the documentation based on the javadoc comments -->
+    <target name="document" depends="init" description="Generate
+    documentation for all sources">
+        <javadoc defaultexcludes="yes"
+		 destdir="jdoc"
+		 author="true"
+		 version="true"
+		 access="private"
+		 use="true"
+		 windowtitle="CS520 - Homework 1">
+	    <fileset dir="src"/>
+	</javadoc>
+    </target>
+
+<!-- Compile the project -->
+    <target name="compile" depends="init" description="Compile all sources">
+        <javac includeantruntime="true" 
+               srcdir="src"
+               destdir="bin"
+               debug="yes">
+	    <classpath path="bin"/>
+        </javac>
+    </target>
+</project>
