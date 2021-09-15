@@ -9,6 +9,8 @@ TicTacToeGame.java and TicTacToeBlock.java are a basic Java implementation of th
 
 3. Run `ant compile` to compile all of the java classes. Compiled classes will be in the `bin` folder.
 
+4. Run `ant test` to run all unit tests.
+
 ### How to run (from Terminal):
 
 1. After building the project (i.e., running `ant`), run the following command in the tictactoe folder:
